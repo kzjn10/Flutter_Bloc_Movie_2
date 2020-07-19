@@ -2,12 +2,11 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_movie_app/common/constants/language_constants.dart';
 
+import 'package:flutter_movie_app/common/constants/language_constants.dart';
 import 'package:flutter_movie_app/common/constants/router_constants.dart';
 import 'package:flutter_movie_app/common/injector/injector.dart';
 import 'package:flutter_movie_app/common/internationalization.dart';
-import 'package:flutter_movie_app/presentation/journey/splash/splash_screen.dart';
 import 'package:flutter_movie_app/presentation/routes.dart';
 import 'package:flutter_movie_app/presentation/theme/theme_color.dart';
 

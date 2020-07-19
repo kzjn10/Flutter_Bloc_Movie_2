@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter_movie_app/common/exceptions/network_connection_exception.dart';
 import 'package:flutter_movie_app/common/network/network_info.dart';
 import 'package:flutter_movie_app/data/datasources/remote/movie_remote_datasource.dart';

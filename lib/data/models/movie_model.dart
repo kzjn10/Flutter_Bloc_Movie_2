@@ -65,8 +65,8 @@ class MovieModel extends MovieEntity {
     belongsToCollection = CollectionModel.fromJson(
         jsonData['belongs_to_collection'] ?? <String, dynamic>{});
     budget = jsonData['budget'] ?? 0;
-    genres = jsonData["genres"] != null
-        ? GenreModel.fromJsonArray(jsonData["genres"] ?? <String, dynamic>{})
+    genres = jsonData['genres'] != null
+        ? GenreModel.fromJsonArray(jsonData['genres'] ?? <String, dynamic>{})
         : <GenreModel>[];
     homepage = jsonData['homepage'] ?? '';
     id = jsonData['id'] ?? 0;
@@ -76,18 +76,18 @@ class MovieModel extends MovieEntity {
     overview = jsonData['overview'] ?? '';
     popularity = jsonData['popularity'] ?? 0.0;
     posterPath = jsonData['poster_path'] ?? '';
-    productionCompanies = jsonData["production_companies"] != null
+    productionCompanies = jsonData['production_companies'] != null
         ? CompanyModel.fromJsonArray(
             jsonData['production_companies'] ?? <String, dynamic>{})
         : <CompanyModel>[];
-    productionCountries = jsonData["production_countries"] != null
+    productionCountries = jsonData['production_countries'] != null
         ? CountryModel.fromJsonArray(
             jsonData['production_countries'] ?? <String, dynamic>{})
         : <CountryModel>[];
     releaseDate = jsonData['release_date'] ?? '';
     revenue = jsonData['revenue'] ?? 0;
     runtime = jsonData['runtime'] ?? 0;
-    spokenLanguages = jsonData["spoken_languages"] != null
+    spokenLanguages = jsonData['spoken_languages'] != null
         ? LanguageModel.fromJsonArray(
             jsonData['spoken_languages'] ?? <String, dynamic>{})
         : <LanguageModel>[];
