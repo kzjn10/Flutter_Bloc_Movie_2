@@ -1,0 +1,8 @@
+{
+  "common.section.lastUpdated": "Updated",
+  "common.day.today": "Today",
+  "common.day.yesterday": "Yesterday",
+  "common.day.tomorrow": "Tomorrow",
+  "common.day.inNdays": "In %d days",
+  "common.day.x": "Xyz on the day"
+}
