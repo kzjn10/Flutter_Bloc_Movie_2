@@ -7,9 +7,8 @@ analyzer:
     todo: ignore
     missing_required_param: error
   exclude:
-    - lib/generated/i18n.dart
     - lib/common/internationalization.dart
-    - lib/common/injector/injector.g.dart
+    - lib/common/injector/injector_config.g.dart
     - lib/env.dart
   enable-experiment:
     - extension-methods

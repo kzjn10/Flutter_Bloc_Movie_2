@@ -1,7 +1,7 @@
 import 'package:flutter_movie_app/common/configurations/configurations.dart';
 
-class ImageUtils {
-  String getImagePath(String imageName) {
-    return '${Configurations.imageHost}$imageName';
+class PathUtils {
+  static String getImagePath(String imageName, {String width = 'w500'}) {
+    return '${Configurations.imageHost}$width$imageName';
   }
 }

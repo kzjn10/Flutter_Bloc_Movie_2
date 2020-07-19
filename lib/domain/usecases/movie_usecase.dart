@@ -1,20 +1,26 @@
 import 'package:flutter/material.dart';
 
-import 'package:insurance/domain/entities/article_detail_entity.dart';
-import 'package:insurance/domain/entities/article_entity.dart';
-import 'package:insurance/domain/repositories/article_repository.dart';
+import 'package:flutter_movie_app/domain/entities/movie_entity.dart';
+import 'package:flutter_movie_app/domain/entities/movie_image_entity.dart';
+import 'package:flutter_movie_app/domain/repositories/movie_repository.dart';
 
-class ArticleUseCase {
-  final ArticleRepository articleRepository;
+class MovieUseCase {
+  final MovieRepository movieRepository;
 
-  ArticleUseCase({this.articleRepository});
+  MovieUseCase({this.movieRepository});
 
-  Future<List<ArticleEntity>> getLatestArticles({bool isFromApi}) async {
-    return articleRepository.getLatestArticles(isFromApi: isFromApi);
+  Future<List<MovieEntity>> getMovieList(
+      {String type, bool fromRemote = true}) async {
+    return movieRepository.fetchMovieList(type: type);
   }
 
-  Future<ArticleDetailEntity> getArticleDetail(
-      {@required String id, bool isFromApi}) async {
-    return articleRepository.getArticleDetail(id: id, isFromApi: isFromApi);
+  Future<MovieEntity> getMovieDetail(
+      {@required String id, bool fromRemote = true}) async {
+    return movieRepository.fetchMovieDetail(movieId: id);
+  }
+
+  Future<MovieImageEntity> getMovieImages(
+      {@required String id, bool fromRemote = true}) async {
+    return movieRepository.fetchMovieImages(movieId: id);
   }
 }

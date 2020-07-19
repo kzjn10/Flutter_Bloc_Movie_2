@@ -9,9 +9,9 @@ import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 import 'package:sprintf/sprintf.dart';
 
-import 'package:internationalization_ex/common/constants/date_time_format_constants.dart';
-import 'package:internationalization_ex/common/extensions/date_time_extensions.dart';
-import 'package:internationalization_ex/entities/language_reference_entity.dart';
+import 'package:flutter_movie_app/common/constants/date_time_format_constants.dart';
+import 'package:flutter_movie_app/common/extensions/date_time_extensions.dart';
+import 'package:flutter_movie_app/domain/entities/language_reference_entity.dart';
 import 'constants/language_constants.dart';
 
 const _supportedLanguages = [

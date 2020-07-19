@@ -1,7 +1,5 @@
-import 'package:insurance/presentation/common_bloc/base/base_bloc_state.dart';
+part of 'language_bloc.dart';
 
-class LanguageState extends BaseBlocState {
-  LanguageState() : super(timeStamp: DateTime.now().millisecondsSinceEpoch);
-}
+abstract class LanguageState {}
 
 class StartAppState extends LanguageState {}

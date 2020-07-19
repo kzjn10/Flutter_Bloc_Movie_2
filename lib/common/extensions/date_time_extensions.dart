@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:internationalization_ex/common/constants/date_time_format_constants.dart';
-import 'package:internationalization_ex/common/internationalization.dart';
-import 'package:internationalization_ex/common/extensions/string_extension.dart';
+
 import 'package:intl/intl.dart';
+
+import 'package:flutter_movie_app/common/constants/date_time_format_constants.dart';
+import 'package:flutter_movie_app/common/extensions/string_extension.dart';
+import 'package:flutter_movie_app/common/internationalization.dart';
 
 extension DateTimeExt on DateTime {
   String lastUpdate({BuildContext context, String languageCode}) {
@@ -14,13 +16,13 @@ extension DateTimeExt on DateTime {
         context: context,
         haveYesterday: false,
         dateFormat: DateTimeFormatConstants.ddMMMFormat);
-    final timeAgo = toString().timeFormattedHHmm(languageCode: languageCode);
+    final timeAgo = toString().timeFormattedHHmmss(languageCode: languageCode);
     final lastUpdate = S.of(context).translate('common.section.lastUpdated');
     return '$lastUpdate $dateAgo, $timeAgo';
   }
 
   String toStringWithFormat(String format) {
-    final DateFormat dateFormat = DateFormat(format);
+    final dateFormat = DateFormat(format);
     return dateFormat.format(this) ?? '';
   }
 
@@ -28,7 +30,7 @@ extension DateTimeExt on DateTime {
     if (this == null) {
       return false;
     }
-    final DateTime today = DateTime.now();
+    final today = DateTime.now();
 
     return today.day == day && today.month == month && today.year == year;
   }
@@ -37,7 +39,7 @@ extension DateTimeExt on DateTime {
     if (this == null) {
       return false;
     }
-    final DateTime today = DateTime.now();
+    final today = DateTime.now();
 
     return today.day != day || today.month != month || today.year != year;
   }
@@ -46,10 +48,10 @@ extension DateTimeExt on DateTime {
     if (this == null) {
       return false;
     }
-    final DateTime today = DateTime.now();
-    const Duration twoDay = Duration(days: 2);
+    final today = DateTime.now();
+    const twoDay = Duration(days: 2);
 
-    final Duration difference = today.difference(this);
+    final difference = today.difference(this);
 
     if (difference.compareTo(twoDay) < 1) {
       return true;

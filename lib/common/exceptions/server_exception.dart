@@ -16,10 +16,10 @@ class ErrorList {
   }
 }
 
-class ServerException implements Exception {
+class BaseException implements Exception {
   final String message;
   final String code;
   final List<ErrorList> errors;
 
-  ServerException({this.message, this.code, this.errors});
+  BaseException({this.message, this.code, this.errors});
 }

@@ -1,24 +1,35 @@
-import 'package:insurance/domain/entities/article_detail_entity.dart';
-import 'package:insurance/domain/entities/article_entity.dart';
+part of 'movie_bloc.dart';
 
-abstract class ArticleState {}
+abstract class MovieState {}
 
-class LoadArticleListState extends ArticleState {}
+class InitMovieState extends MovieState {}
 
-class LoadedArticleListState extends ArticleState {
-  final List<ArticleEntity> data;
+class FetchMovieListState extends MovieState {}
 
-  LoadedArticleListState({this.data});
+class LoadedMovieListState extends MovieState {
+  final List<MovieEntity> data;
+
+  LoadedMovieListState({this.data});
 }
 
-class FailToLoadArticleListState extends ArticleState {}
+class FailToLoadMovieListState extends MovieState {}
 
-class LoadArticleDetailState extends ArticleState {}
+class FetchMovieDetailState extends MovieState {}
 
-class LoadedArticleDetailState extends ArticleState {
-  final ArticleDetailEntity data;
+class LoadedMovieDetailState extends MovieState {
+  final MovieEntity data;
 
-  LoadedArticleDetailState({this.data});
+  LoadedMovieDetailState({this.data});
 }
 
-class FailToLoadArticleDetailState extends ArticleState {}
+class FailToLoadMovieDetailState extends MovieState {}
+
+class FetchMovieGraphicState extends MovieState {}
+
+class LoadedMovieGraphicState extends MovieState {
+  final MovieImageEntity data;
+
+  LoadedMovieGraphicState({this.data});
+}
+
+class FailToLoadMovieGraphicState extends MovieState {}

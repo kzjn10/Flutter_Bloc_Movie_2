@@ -4,7 +4,7 @@ import 'package:flutter_movie_app/domain/entities/country_entity.dart';
 import 'package:flutter_movie_app/domain/entities/genre_entity.dart';
 import 'package:flutter_movie_app/domain/entities/language_entity.dart';
 
-class MovieDetailEntity {
+class MovieEntity {
   bool adult;
   String backdropPath;
   CollectionEntity belongsToCollection;
@@ -31,7 +31,7 @@ class MovieDetailEntity {
   double voteAverage;
   int voteCount;
 
-  MovieDetailEntity({
+  MovieEntity({
     this.adult,
     this.backdropPath,
     this.belongsToCollection,

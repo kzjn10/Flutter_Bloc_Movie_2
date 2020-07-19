@@ -1,5 +1,13 @@
-import 'package:insurance/presentation/common_bloc/base/base_bloc.dart';
-import 'package:insurance/presentation/common_bloc/language_bloc/language_event.dart';
-import 'package:insurance/presentation/common_bloc/language_bloc/language_state.dart';
+import 'package:bloc/bloc.dart';
 
-class LanguageBloc extends BaseBloc<LanguageEvent, LanguageState> {}
+part 'language_event.dart';
+part 'language_state.dart';
+
+class LanguageBloc extends Bloc<LanguageEvent, LanguageState> {
+  LanguageBloc() : super(StartAppState());
+
+  @override
+  Stream<LanguageState> mapEventToState(LanguageEvent event) {
+    throw UnimplementedError();
+  }
+}

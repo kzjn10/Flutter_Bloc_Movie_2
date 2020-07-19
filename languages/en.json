@@ -4,5 +4,9 @@
   "common.day.yesterday": "Yesterday",
   "common.day.tomorrow": "Tomorrow",
   "common.day.inNdays": "In %d days",
-  "common.day.x": "Xyz on the day"
+
+  "splashScreen.message.delayTime": "Auto enter home page after %s",
+
+  "homeScreen.title.myList": "My List",
+  "homeScreen.title.popular": "Popular on Netflix"
 }

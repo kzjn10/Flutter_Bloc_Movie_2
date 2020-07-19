@@ -4,5 +4,9 @@
   "common.day.yesterday": "Hôm qua",
   "common.day.tomorrow": "Ngày mai",
   "common.day.inNdays": "Trong %d ngày",
-  "common.day.x": "Tiếng việt nè"
+
+  "splashScreen.message.delayTime": "Tự động chuyển đến trang chủ sau %s",
+
+  "homeScreen.title.myList": "Của tôi",
+  "homeScreen.title.popular": "Phổ biến trên Netflix"
 }

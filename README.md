@@ -27,6 +27,9 @@ The movie app
 
 - [Kiwi - Dependency injector](https://pub.dev/packages/kiwi)
 - [Bloc - State management](https://pub.dev/packages/flutter_bloc)
+- [Carousel - Slider](https://pub.dev/packages/carousel_slider)
+- [Http - HTTP requests](https://pub.dev/packages/http)
+- [Screen Util - Adapting screen and font size](https://pub.dev/packages/flutter_screenutil)
 
 
 # How to use

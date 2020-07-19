@@ -1,3 +1,3 @@
-import 'package:insurance/presentation/common_bloc/base/base_bloc_event.dart';
+part of 'language_bloc.dart';
 
-abstract class LanguageEvent extends BaseBlocEvent {}
+abstract class LanguageEvent {}

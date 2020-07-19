@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:insurance/presentation/theme/theme_color.dart';
+
 import 'package:shimmer/shimmer.dart';
+
+import 'package:flutter_movie_app/presentation/theme/theme_color.dart';
 
 class PlaceHolderWidget extends StatelessWidget {
   final double width;

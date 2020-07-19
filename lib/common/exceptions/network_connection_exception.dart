@@ -1,4 +1,4 @@
-import 'package:insurance/common/exceptions/app_exception.dart';
+import 'package:flutter_movie_app/common/exceptions/app_exception.dart';
 
 class NetworkConnectionException extends AppException {
   NetworkConnectionException()

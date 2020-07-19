@@ -1,65 +1,79 @@
+import 'package:flutter/material.dart';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:insurance/domain/usecases/article_usecase.dart';
+import 'package:flutter_movie_app/domain/entities/movie_entity.dart';
+import 'package:flutter_movie_app/domain/entities/movie_image_entity.dart';
+import 'package:flutter_movie_app/domain/usecases/movie_usecase.dart';
 
-import 'article_event.dart';
-import 'article_state.dart';
+part 'movie_event.dart';
+part 'movie_state.dart';
 
-class ArticleBloc extends Bloc<ArticleEvent, ArticleState> {
-  final ArticleUseCase articleUseCase;
+class MovieBloc extends Bloc<MovieEvent, MovieState> {
+  final MovieUseCase movieUseCase;
 
-  ArticleBloc({this.articleUseCase});
+  MovieBloc({this.movieUseCase}) : super(InitMovieState());
 
   @override
-  ArticleState get initialState => LoadArticleListState();
-
-  @override
-  Stream<ArticleState> mapEventToState(ArticleEvent event) async* {
+  Stream<MovieState> mapEventToState(MovieEvent event) async* {
     switch (event.runtimeType) {
-      case FetchArticleListEvent:
-        yield* _mapLoadArticleListToState(event);
+      case FetchMovieListEvent:
+        yield* _fetchMovieList(event);
         break;
-      case FetchArticleDetailEvent:
-        yield* _mapLoadArticleDetailToState(event);
+      case FetchMovieDetailEvent:
+        yield* _fetchMovieDetail(event);
+        break;
+      case FetchMovieGraphicEvent:
+        yield* _fetchMovieGraphic(event);
         break;
       default:
         break;
     }
   }
 
-  Stream<ArticleState> _mapLoadArticleListToState(
-      FetchArticleListEvent event) async* {
+  Stream<MovieState> _fetchMovieList(FetchMovieListEvent event) async* {
     try {
-      yield LoadArticleListState();
+      yield FetchMovieListState();
 
-      final bundleData =
-          await articleUseCase.getLatestArticles(isFromApi: event.isFromApi);
+      final movieList = await movieUseCase.getMovieList(type: event.type);
 
-      if (bundleData?.isNotEmpty ?? false) {
-        yield LoadedArticleListState(data: bundleData);
+      if (movieList?.isNotEmpty ?? false) {
+        yield LoadedMovieListState(data: movieList);
       } else {
-        yield FailToLoadArticleListState();
+        yield FailToLoadMovieListState();
       }
     } catch (_) {
-      yield FailToLoadArticleListState();
+      yield FailToLoadMovieListState();
     }
   }
 
-  Stream<ArticleState> _mapLoadArticleDetailToState(
-      FetchArticleDetailEvent event) async* {
+  Stream<MovieState> _fetchMovieDetail(FetchMovieDetailEvent event) async* {
     try {
-      yield LoadArticleDetailState();
+      yield FetchMovieDetailState();
 
-      final orderData = await articleUseCase.getArticleDetail(
-          id: event.articleId, isFromApi: true);
-
-      if (orderData != null) {
-        yield LoadedArticleDetailState(data: orderData);
+      final movieData = await movieUseCase.getMovieDetail(id: event.movieId);
+      if (movieData != null) {
+        yield LoadedMovieDetailState(data: movieData);
       } else {
-        yield FailToLoadArticleDetailState();
+        yield FailToLoadMovieDetailState();
       }
     } catch (_) {
-      yield FailToLoadArticleDetailState();
+      yield FailToLoadMovieDetailState();
+    }
+  }
+
+  Stream<MovieState> _fetchMovieGraphic(FetchMovieGraphicEvent event) async* {
+    try {
+      yield FetchMovieGraphicState();
+
+      final movieData = await movieUseCase.getMovieImages(id: event.movieId);
+      if (movieData != null) {
+        yield LoadedMovieGraphicState(data: movieData);
+      } else {
+        yield FailToLoadMovieGraphicState();
+      }
+    } catch (_) {
+      yield FailToLoadMovieGraphicState();
     }
   }
 }

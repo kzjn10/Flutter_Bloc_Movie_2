@@ -1,7 +1,8 @@
-dynamic getData(dynamic result) => result['data'];
+dynamic getData(dynamic result) => result['results'];
+
 int getCode(dynamic result) => result['code'];
 
-List<dynamic> getDataList(dynamic result) => result['data'];
+dynamic getDataList(dynamic result) => result['total_results'];
 
 dynamic getErrorResult(dynamic result) => result['error'];
 

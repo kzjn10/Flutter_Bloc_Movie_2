@@ -3,10 +3,10 @@ import 'package:flutter_movie_app/data/models/company_model.dart';
 import 'package:flutter_movie_app/data/models/country_model.dart';
 import 'package:flutter_movie_app/data/models/genre_model.dart';
 import 'package:flutter_movie_app/data/models/language_model.dart';
-import 'package:flutter_movie_app/domain/entities/movie_detail_entity.dart';
+import 'package:flutter_movie_app/domain/entities/movie_entity.dart';
 
-class MovieDetailModel extends MovieDetailEntity {
-  MovieDetailModel({
+class MovieModel extends MovieEntity {
+  MovieModel({
     bool adult,
     String backdropPath,
     CollectionModel belongsToCollection,
@@ -59,13 +59,15 @@ class MovieDetailModel extends MovieDetailEntity {
           voteCount: voteCount,
         );
 
-  MovieDetailModel.fromJson(Map<String, dynamic> jsonData) {
+  MovieModel.fromJson(Map<String, dynamic> jsonData) {
     adult = jsonData['adult'] ?? false;
     backdropPath = jsonData['backdrop_path'] ?? '';
-    belongsToCollection =
-        CollectionModel.fromJson(jsonData['belongs_to_collection']);
+    belongsToCollection = CollectionModel.fromJson(
+        jsonData['belongs_to_collection'] ?? <String, dynamic>{});
     budget = jsonData['budget'] ?? 0;
-    genres = GenreModel.fromJsonArray(jsonData["genres"]);
+    genres = jsonData["genres"] != null
+        ? GenreModel.fromJsonArray(jsonData["genres"] ?? <String, dynamic>{})
+        : <GenreModel>[];
     homepage = jsonData['homepage'] ?? '';
     id = jsonData['id'] ?? 0;
     imdbId = jsonData['imdb_id'] ?? '';
@@ -74,14 +76,21 @@ class MovieDetailModel extends MovieDetailEntity {
     overview = jsonData['overview'] ?? '';
     popularity = jsonData['popularity'] ?? 0.0;
     posterPath = jsonData['poster_path'] ?? '';
-    productionCompanies =
-        CompanyModel.fromJsonArray(jsonData['production_companies']);
-    productionCountries =
-        CountryModel.fromJsonArray(jsonData['production_countries']);
+    productionCompanies = jsonData["production_companies"] != null
+        ? CompanyModel.fromJsonArray(
+            jsonData['production_companies'] ?? <String, dynamic>{})
+        : <CompanyModel>[];
+    productionCountries = jsonData["production_countries"] != null
+        ? CountryModel.fromJsonArray(
+            jsonData['production_countries'] ?? <String, dynamic>{})
+        : <CountryModel>[];
     releaseDate = jsonData['release_date'] ?? '';
     revenue = jsonData['revenue'] ?? 0;
     runtime = jsonData['runtime'] ?? 0;
-    spokenLanguages = LanguageModel.fromJsonArray(jsonData['spoken_languages']);
+    spokenLanguages = jsonData["spoken_languages"] != null
+        ? LanguageModel.fromJsonArray(
+            jsonData['spoken_languages'] ?? <String, dynamic>{})
+        : <LanguageModel>[];
     status = jsonData['status'] ?? '';
     tagLine = jsonData['tagline'] ?? '';
     title = jsonData['title'] ?? '';

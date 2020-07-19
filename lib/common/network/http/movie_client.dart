@@ -1,11 +1,13 @@
-import 'http_client.dart';
-import 'http_constants.dart';
+import 'package:flutter_movie_app/common/configurations/configurations.dart';
 
-class InsuranceClient extends HttpClient {
-  InsuranceClient()
+import 'http_client.dart';
+
+class MovieClient extends HttpClient {
+  MovieClient()
       : super(
-          host: HttpConstants.host,
+          host: Configurations.host,
           header: getAuthenticationHeader(),
+          apiKey: Configurations.apiKey,
         );
 
   static Map<String, String> getAuthenticationHeader() {

@@ -8,15 +8,16 @@ part of 'injector_config.dart';
 
 class _$InjectorConfig extends InjectorConfig {
   void _configureBlocs() {
-    final KiwiContainer container = KiwiContainer();
-    container
-        .registerFactory((c) => MovieBloc(movieUseCase: c<MovieUseCase>()));
+    KiwiContainer()
+      ..registerSingleton((c) => LanguageBloc())
+      ..registerFactory((c) => MovieBloc(movieUseCase: c<MovieUseCase>()))
+      ..registerFactory((c) => TimerBloc(ticker: c<Ticker>()));
   }
 
   void _configureUseCases() {
     final KiwiContainer container = KiwiContainer();
     container.registerFactory(
-        (c) => MovieUseCase(movieRepository: c<MovieRepository>()));
+        (c) => MovieUseCase(movieRepository: c<MovieRepositoryImpl>()));
   }
 
   void _configureRepositories() {
@@ -31,8 +32,18 @@ class _$InjectorConfig extends InjectorConfig {
         (c) => MovieRemoteDataSource(movieClient: c<MovieClient>()));
   }
 
+  void _configureExternal() {
+    final KiwiContainer container = KiwiContainer();
+    container.registerSingleton((c) => MovieClient());
+  }
+
   void _configureCommon() {
     final KiwiContainer container = KiwiContainer();
     container.registerFactory((c) => NetworkInfoImpl());
+  }
+
+  void _configureUtils() {
+    final KiwiContainer container = KiwiContainer();
+    container.registerFactory((c) => Ticker());
   }
 }

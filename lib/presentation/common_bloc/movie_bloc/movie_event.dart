@@ -1,17 +1,31 @@
-import 'package:flutter/material.dart';
+part of 'movie_bloc.dart';
 
-abstract class ArticleEvent {
-  bool isFromApi;
+abstract class MovieEvent {
+  bool isFromRemote;
 
-  ArticleEvent({this.isFromApi});
+  MovieEvent({this.isFromRemote});
 }
 
-class FetchArticleListEvent extends ArticleEvent {
-  FetchArticleListEvent({bool fromApi}) : super(isFromApi: fromApi);
+class FetchMovieListEvent extends MovieEvent {
+  final String type;
+  final bool fromRemote;
+
+  FetchMovieListEvent({
+    @required this.type,
+    this.fromRemote = true,
+  }) : super(isFromRemote: fromRemote);
 }
 
-class FetchArticleDetailEvent extends ArticleEvent {
-  final String articleId;
-  FetchArticleDetailEvent({@required this.articleId, bool fromApi})
-      : super(isFromApi: fromApi);
+class FetchMovieDetailEvent extends MovieEvent {
+  final String movieId;
+  final bool fromRemote;
+  FetchMovieDetailEvent({@required this.movieId, this.fromRemote = true})
+      : super(isFromRemote: fromRemote);
+}
+
+class FetchMovieGraphicEvent extends MovieEvent {
+  final String movieId;
+  final bool fromRemote;
+  FetchMovieGraphicEvent({@required this.movieId, this.fromRemote = true})
+      : super(isFromRemote: fromRemote);
 }

@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'package:cached_network_image/cached_network_image.dart';
 
-import 'package:insurance/common/constants/resource_constants.dart';
-import 'package:insurance/presentation/theme/theme_color.dart';
-import 'package:insurance/presentation/widgets/place_holder_widget/place_holder_widget.dart';
+import 'package:flutter_movie_app/common/constants/graphic_constants.dart';
+import 'package:flutter_movie_app/presentation/theme/theme_color.dart';
+import 'package:flutter_movie_app/presentation/widgets/place_holder_widget/place_holder_widget.dart';
 
 class ImageNetworkWidget extends StatelessWidget {
   final String imageUrl;
@@ -50,9 +50,7 @@ class ImageNetworkWidget extends StatelessWidget {
           color: AppColor.dustyGray.withOpacity(.5),
           padding: const EdgeInsets.all(15),
           child: Center(
-            child: Image.asset(
-              GraphicConstants.appIconWhite,
-            ),
+            child: Image.asset(GraphicConstants.logo),
           ),
         );
       },
@@ -77,9 +75,7 @@ class ImageNetworkWidget extends StatelessWidget {
             color: AppColor.dustyGray.withOpacity(.5),
             padding: const EdgeInsets.all(15),
             child: Center(
-              child: Image.asset(
-                GraphicConstants.appIconWhite,
-              ),
+              child: Image.asset(GraphicConstants.logo),
             ),
           );
         },
