@@ -34,13 +34,13 @@ class _HomeScreenState extends State<HomeScreen> {
         brightness: Brightness.light,
         backgroundColor: Colors.white,
         elevation: 0.0,
-        leading: Icon(
+        leading: const Icon(
           Icons.menu,
           color: Colors.black,
         ),
         actions: <Widget>[
           IconButton(
-            icon: Icon(
+            icon: const Icon(
               Icons.search,
               color: Colors.black, // Here
             ),
@@ -86,14 +86,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 Expanded(
                   child: Text(
                     S.of(context).translate('homeScreen.title.myList'),
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.black,
                       fontSize: 16.0,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
-                Icon(
+                const Icon(
                   Icons.arrow_forward,
                   color: Colors.black,
                 )
@@ -122,14 +122,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 Expanded(
                   child: Text(
                     S.of(context).translate('homeScreen.title.popular'),
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.black,
                       fontSize: 16.0,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
-                Icon(
+                const Icon(
                   Icons.arrow_forward,
                   color: Colors.black,
                 )

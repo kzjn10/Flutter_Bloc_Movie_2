@@ -71,7 +71,7 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
               ),
               centerTitle: true,
               brightness: Brightness.light,
-              iconTheme: IconThemeData(
+              iconTheme: const IconThemeData(
                 color: Colors.black, //change your color here
               ),
               elevation: 0.0,
@@ -79,7 +79,7 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
               //No more green
               actions: <Widget>[
                 IconButton(
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.favorite_border,
                     color: Colors.black, // Here
                   ),
@@ -164,13 +164,15 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
                     clipper: CoverClipper(),
                     child: Container(
                       alignment: Alignment.center,
-                      decoration:
-                          BoxDecoration(color: Colors.white, boxShadow: [
-                        BoxShadow(
-                            color: Colors.black12,
-                            offset: const Offset(0.0, 10.0),
-                            blurRadius: 10.0)
-                      ]),
+                      decoration: const BoxDecoration(
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                              color: Colors.black12,
+                              offset: Offset(0.0, 10.0),
+                              blurRadius: 10.0)
+                        ],
+                      ),
                       child: ImageNetworkWidget(
                         imageUrl:
                             PathUtils.getImagePath(backdrop, width: 'w780'),
@@ -186,7 +188,7 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: <Widget>[
                         IconButton(
-                          icon: Icon(
+                          icon: const Icon(
                             Icons.add,
                           ),
                           onPressed: () {
@@ -197,7 +199,7 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
                           child: Container(),
                         ),
                         IconButton(
-                          icon: Icon(
+                          icon: const Icon(
                             Icons.share,
                           ),
                           onPressed: () {
@@ -220,7 +222,7 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
                     debugPrint('>>>>>>> On Floating Action Button Pressed');
                   },
                   backgroundColor: Colors.white,
-                  child: Icon(
+                  child: const Icon(
                     Icons.play_arrow,
                     color: Colors.red,
                     size: 40,
@@ -240,7 +242,7 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
       child: Text(
         name,
         textAlign: TextAlign.center,
-        style: TextStyle(
+        style: const TextStyle(
           color: Colors.black87,
           fontSize: 20.0,
           fontWeight: FontWeight.bold,
@@ -266,7 +268,7 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
         alignment: Alignment.center,
         child: Text(
           genresValue.toString(),
-          style: TextStyle(
+          style: const TextStyle(
             color: Colors.black45,
             fontSize: 12.0,
             fontWeight: FontWeight.bold,
@@ -328,7 +330,7 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
         description,
         maxLines: 5,
         overflow: TextOverflow.ellipsis,
-        style: TextStyle(color: Colors.black87, fontSize: 14.0),
+        style: const TextStyle(color: Colors.black87, fontSize: 14.0),
       ),
     );
   }
@@ -338,7 +340,7 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
       child: Column(
         children: <Widget>[
           Row(
-            children: <Widget>[
+            children: const <Widget>[
               Expanded(
                 child: Text(
                   'Screenshots',
@@ -371,7 +373,7 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
           children: <Widget>[
             Text(
               title,
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.black45,
                 fontSize: 12.0,
                 fontWeight: FontWeight.bold,
@@ -384,7 +386,7 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
                   value,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.black,
                     fontSize: 16.0,
                     fontWeight: FontWeight.bold,

@@ -88,12 +88,12 @@ class _CategoryWidgetState extends State<CategoryWidget> {
                 alignment: Alignment.center,
                 width: constraints.biggest.width,
                 height: constraints.biggest.height,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   gradient: LinearGradient(
                     begin: Alignment.topRight,
                     end: Alignment.bottomLeft,
-                    stops: const [0.1, 0.5, 0.7, 0.9],
-                    colors: const [
+                    stops: [0.1, 0.5, 0.7, 0.9],
+                    colors: [
                       Color(0x99ff0000),
                       Color(0x66ff0000),
                       Color(0x66ff0000),
@@ -107,7 +107,7 @@ class _CategoryWidgetState extends State<CategoryWidget> {
                     data?.releaseDate,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.white,
                       fontSize: 18,
                       fontWeight: FontWeight.bold,

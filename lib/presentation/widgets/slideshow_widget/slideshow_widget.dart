@@ -116,12 +116,12 @@ class _SlideshowWidgetState extends State<SlideshowWidget> {
               alignment: Alignment.bottomLeft,
               width: constraints.biggest.width,
               height: constraints.biggest.height,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.topRight,
                   end: Alignment.bottomLeft,
-                  stops: const [0.1, 0.5, 0.7, 0.9],
-                  colors: const [
+                  stops: [0.1, 0.5, 0.7, 0.9],
+                  colors: [
                     Color(0x00000000),
                     Color(0x00000000),
                     Color(0x22000000),
@@ -135,7 +135,7 @@ class _SlideshowWidgetState extends State<SlideshowWidget> {
                   data?.title?.toUpperCase() ?? '',
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.white,
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
